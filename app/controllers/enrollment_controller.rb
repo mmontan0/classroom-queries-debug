@@ -1,4 +1,4 @@
-class EnrollmentsController < ApplicationController
+class EnrollmentController < ApplicationController
   def create
     @enrollment = Enrollment.new
     @enrollment.course_id = params.fetch("query_course_id")
@@ -10,5 +10,5 @@ class EnrollmentsController < ApplicationController
     else
       redirect_to("/students/#{@enrollment.student_id}", { :notice => "Enrollment failed to create successfully." })
     end
-  end
+  end 
 end
